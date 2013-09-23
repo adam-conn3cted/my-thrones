@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyThrones Admin</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.2-bundled-min.js"></script>
+
+    <script type="text/javascript" src="myThrones_StackMob.js"></script>
+
+    <script type="text/javascript">
+      StackMob.init({
+        publicKey: "1678bafc-0a5c-4a02-9e4f-dfebe1edf8b5",
+        apiVersion: 0
+      });
+
+      var Question = StackMob.Model.extend({
+        schemaName: 'question'
+      });
+    </script>
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+      });
+    </script>
+
+  </head>
+  <body>
+    <form id="createQuestionForm">
+        Text: <input type="text" name="text" /><br>
+        Correct Answer: <input type="text" name="correct_answer" /><br>
+        Wrong Answer 1: <input type="text" name="wrong_answer_1" /><br>
+        Wrong Answer 2: <input type="text" name="wrong_answer_2" /><br>
+        Wrong Answer 3: <input type="text" name="wrong_answer_3" /><br>
+        Weight: <input type="number" name="weight" /><br>
+
+        <button onclick="createQuestion()">Create Question</button>
+    </form>
+  </body>
+</html>
