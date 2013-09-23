@@ -1,5 +1,3 @@
-
-
 function createQuestion()
 {
   var text = $("#createQuestionForm input[name=text]").val();
@@ -12,10 +10,10 @@ function createQuestion()
   var question = new Question({
     text : text,
     correct_answer : correct_answer,
-    wrong_answer_1 : wrong_answer_1,
-    wrong_answer_2 : wrong_answer_2,
-    wrong_answer_3 : wrong_answer_3,
-    weight : parseInt(weight)
+    wrong_answers : [wrong_answer_1, wrong_answer_2, wrong_answer_3],
+    weight : parseInt(weight),
+    correctly_answered : false,
+    has_been_asked : false
   });
 
   question.create({
