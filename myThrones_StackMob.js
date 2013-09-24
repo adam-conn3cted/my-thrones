@@ -10,7 +10,6 @@ function createQuestion()
     text : text,
     correct_answer : correct_answer,
     wrong_answers : [wrong_answer_1, wrong_answer_2, wrong_answer_3],
-    weight : parseInt(weight),
     correctly_answered : false,
     has_been_asked : false
   });
