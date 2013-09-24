@@ -5,7 +5,6 @@ function createQuestion()
   var wrong_answer_1 = $("#createQuestionForm input[name=wrong_answer_1]").val();
   var wrong_answer_2 = $("#createQuestionForm input[name=wrong_answer_2]").val();
   var wrong_answer_3 = $("#createQuestionForm input[name=wrong_answer_3]").val();
-  var weight = $("#createQuestionForm input[name=weight]").val();
 
   var question = new Question({
     text : text,
