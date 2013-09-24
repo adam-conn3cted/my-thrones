@@ -1,0 +1,192 @@
+/*General Styles*/
+hr{
+	background-color:#505459
+}
+
+p{
+	line-height:1.4
+}
+
+audio{
+	display:none;
+}
+
+h1.logo{
+	font-family: 'UnifrakturCook', cursive;
+	font-size: 5em;
+	padding: 0;
+	margin: 0;
+	color:#faaf3b;
+	text-shadow: 2px 2px 50px #616161;
+        filter: dropshadow(color=#616161, offx=2, offy=2);
+		
+  background: -webkit-linear-gradient(#ce8424, #faaf3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+	.logostyle{
+		color:#faaf3b;
+		font-family: 'UnifrakturCook', cursive;
+		text-shadow: 2px 2px 50px #616161;
+        filter: dropshadow(color=#616161, offx=2, offy=2);
+		
+	  background: -webkit-linear-gradient(#ce8424, #faaf3b);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	}
+
+.subheading{
+	font-family: 'UnifrakturCook', cursive;
+	font-size: 1.8em;
+}
+
+
+
+.boxin{
+	width:70%;
+	text-align:center;
+	margin:0 auto;
+}
+
+#page{
+	/*background:#505459;*/
+}
+
+.quote-list{
+	display:block
+}
+
+.quote-list li{
+	list-style:none;
+	float:left;
+	
+}
+.quote{
+	width:10%;
+}
+.quote-text{
+	width:72%
+}
+
+.quote span{
+	color:#faaf3b;
+	font-family: 'Spirax', cursive;
+	font-size: 5em;
+	float: left;
+	line-height: 0.6;
+}
+
+.quote-right{
+	float:right;
+}
+
+/*Content Layout*/
+#login .content{
+	margin: 0 auto;
+	width: 60%;
+}
+
+#results .content{
+	margin: 0 auto;
+}
+
+.content h2{
+	text-align:center;
+}
+
+#init-map{
+	background:#FFFfff;
+}
+
+.avator{
+	text-align:center;
+}
+
+.avator img{
+	width:40%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#score{
+	position: fixed;
+	bottom: 0;
+	height: 10%;
+	margin-left: -5%;
+	background: #333;
+	margin-right: -5%;
+	width: 110%;
+	padding: 0 10%;
+}
+#score{
+	color:white;
+}
+#score ul{
+	margin: 0;
+padding: 0;
+}
+#score li{
+	list-style:none;
+	float:left;
+}
+	#score li.score-1{
+		width: 11%;
+	}
+	#score li.score-2{
+		width: 20%;
+		border-right: 1px solid #fff;
+		padding: 2% 0;
+		line-height: 2;
+		color:#faaf3b;
+	}
+	#score li.score-3{
+		width: 53%;
+		padding: 2% 0;
+		line-height: 68px;
+		color: #fff;
+		text-align: center;
+		font-size:1.5em;
+	}
+#score .score-1 img{
+	width: 59%;
+	float: left;
+	margin-right: 10%;
+
+}
+
+#score p span{
+	border-left:1px solid #eee;
+	margin-left:15%
+}
+
+#initialPopup{
+	font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/
+}
+.overlay
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=60);
+    z-index: 80;
+}
+.popupContent
+{
+    background: #000;
+    padding: 10px;
+    border: 1px solid black;
+    position: fixed;
+    top: 30%;
+	left: 20%;
+	right: 20%;
+    z-index: 81;
+}
+
+.text-center{
+	text-align:center
+}

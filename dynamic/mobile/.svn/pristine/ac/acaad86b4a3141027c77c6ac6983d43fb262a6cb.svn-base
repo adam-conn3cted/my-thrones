@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Throne</title>
+<link href='http://fonts.googleapis.com/css?family=UnifrakturCook:700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
+<link href="css/jquery.mobile-1.3.2.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.2-bundled-min.js"></script>
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	  
+    StackMob.init({
+        publicKey: "1678bafc-0a5c-4a02-9e4f-dfebe1edf8b5",
+        apiVersion: 0
+     });
+	
+	
+	
+	$("#loginBtn").click(function(){
+	
+		alert("hello");
+
+        
+        
+     
+        
+    	var username = $("#loginForm input[name='username']").val();
+    	var pass = $("#loginForm input[name='password']").val();
+    	
+    	 var User = StackMob.Model.extend({
+            schemaName: 'user'
+          });
+    	  
+    	  var Users = StackMob.Collection.extend({
+    		model: User
+    	});
+    	
+    	
+    	var q = new StackMob.Collection.Query();
+    	q.equals('username', username); 
+    	q.equals("password1", pass);
+    	q.setExpand(1);
+    	 
+    	
+    	var users = new Users();
+    	var count = 0;
+    	users.query(q, {
+    		success: function(collection, results, options) {
+    			count = collection.length;
+    			if (count == 1)
+    			{
+    				var result = collection.toJSON();  
+    				alert(result[0]);
+    				localStorage.setItem("username", username); 
+    				localStorage.setItem("point",result[0].points);
+ 
+  				
+    				localStorage.setItem("level",result[0].user_level.name + ' - ' + result[0].user_level.value);
+    				localStorage.setItem("location",result[0].user_level.location);
+    				
+    				
+    				window.location = "2-intro.html"			
+    				
+    			}
+    			else
+    			{
+    				alert("Incorrect username/password")
+    			}
+            },
+    		error: function(model, results, options) {
+    			alert('Incorrect username/password');
+    		}
+    	});
+        
+    	
+	
+	});
+	
+	
+	
+	
+	
+});
+
+
+          
+         
+ </script>
+
+</head> 
+
+<body> 
+<audio controls autoplay>
+  <source src="audio/tumblr_lmqp4tNmaA1qkdv4bo1.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<div data-role="page" id="login" data-theme="a">
+	
+	<div data-role="content" class="content">	
+    	
+        <h1 class="logo text-center" >myThrone</h1>
+        <p >&nbsp;</p>
+       
+    	
+   	  <form id="loginForm">
+    	<p>
+    	  <label for="text-basic">Username:</label>
+    	  <input type="text" name="username" id="username" value="">
+    	  <label for="password">Password:</label>
+    	  <input type="password" name="password" id="password" value="" autocomplete="off">
+    	  </p>
+    	<p>&nbsp;</p>
+    	<p><a id="loginBtn" href="#" data-role="button" rel="external">Sign in</a></p>
+        </form>
+        
+       
+	</div>
+	
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+
+
+
+</html>
